@@ -1,2 +1,173 @@
 # responsive-landing-site
 Description: A fully responsive landing page built using HTML, CSS, and JavaScript. Designed to adapt seamlessly across all device sizes, this project showcases modern web design practices including Flexbox/Grid layouts, smooth scroll behavior, and interactive UI elements. Ideal for showcasing products, services, or personal branding 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Landing Page</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333;
+      --accent-color: #6200ea;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--accent-color);
+      color: white;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin-right: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 80px 40px;
+      min-height: 100vh;
+      transition: background-color 0.5s;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom right, #ffffff, #e3f2fd);
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+    }
+
+    .features, .about, .contact {
+      background-color: #f9f9f9;
+    }
+
+    .features h3, .about h3, .contact h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Scrollify 🌐</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h2>Welcome to Scrollify</h2>
+    <p>Your modern solution to building scroll-reactive, responsive web apps with style and substance.</p>
+  </section>
+
+  <section class="features" id="features">
+    <h3>Why Choose Us?</h3>
+    <p>We blend cutting-edge technology with thoughtful design to create unforgettable user experiences.</p>
+  </section>
+
+  <section class="about" id="about">
+    <h3>About Scrollify</h3>
+    <p>Born from a desire to inspire, Scrollify is more than a framework—it's a movement toward seamless interaction.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h3>Get in Touch</h3>
+    <p>Let’s build something amazing together. Contact us today and get a custom quote in minutes!</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Scrollify. All rights reserved.
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+
+      if (scrollPos < 300) {
+        document.documentElement.style.setProperty('--bg-color', '#ffffff');
+        document.documentElement.style.setProperty('--text-color', '#333');
+        document.documentElement.style.setProperty('--accent-color', '#6200ea');
+      } else if (scrollPos < 800) {
+        document.documentElement.style.setProperty('--bg-color', '#f3e5f5');
+        document.documentElement.style.setProperty('--text-color', '#4a148c');
+        document.documentElement.style.setProperty('--accent-color', '#8e24aa');
+      } else if (scrollPos < 1400) {
+        document.documentElement.style.setProperty('--bg-color', '#e0f7fa');
+        document.documentElement.style.setProperty('--text-color', '#006064');
+        document.documentElement.style.setProperty('--accent-color', '#00acc1');
+      } else {
+        document.documentElement.style.setProperty('--bg-color', '#fff8e1');
+        document.documentElement.style.setProperty('--text-color', '#bf360c');
+        document.documentElement.style.setProperty('--accent-color', '#ff8f00');
+      }
+    });
+  </script>
+</body>
+</html>
